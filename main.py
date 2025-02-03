@@ -20,6 +20,9 @@ def kontakt():
         <p><a href="/kontakt">Kontakt</a></p>
     """
 
+@app.route("/<jmeno>")
+def hello(jmeno):
+    return f"Hello {jmeno}!"
 
 if __name__ == "__main__":
     app.run(debug=True)
