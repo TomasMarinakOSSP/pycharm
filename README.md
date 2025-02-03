@@ -1,0 +1,1 @@
+učím se s pycharmem
