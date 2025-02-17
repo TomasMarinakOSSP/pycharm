@@ -1,0 +1,31 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>{% block title %}Výchozí titulek{% endblock %}</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+       <header>
+           <h1>Vítejte na mém webu</h1>
+       </header>
+       <nav>
+           {% block nav %}
+           <ul>
+               <li><a href="/">Domů</a></li>
+               <li><a href="/about">O nás</a></li>
+               <li><a href="/link">Formulář</a></li>
+           </ul>
+           {% endblock %}
+       </nav>
+       <main>
+           {% block content %}
+           <p>Toto je výchozí obsah.</p>
+           {% endblock %}
+       </main>
+       <footer>
+           <p>© 2025 Moje společnost</p>
+       </footer>
+   </body>
+   </html>
