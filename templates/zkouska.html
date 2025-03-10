@@ -10,9 +10,15 @@
 
 <main>
 
-    <p>Nazev bloku je {{ blog }}</p>
-    <p>Email je {{ email }}</p>
     <p>Vybraný programovací jazyk je {{ radio }}</p>
+
+    {% if username == "pokuston" and password == "heslo" %}
+    <h3>Uspesne prihlaseny uzivatele {{ username }}</h3>
+    {% elif username == "pokuston" %}
+    <h3>Nespravne heslo</h3>
+    {% else %}
+    <h3>Nespravne jmeno uzivatele</h3>
+    {% endif %}
 
 </main>
 

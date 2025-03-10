@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
-
+app.config["SECRET_KEY"] = "dev"
 
 @app.route('/')
 def home():
@@ -15,10 +15,12 @@ def about():
 @app.route('/link', methods=['GET', 'POST'])
 def link():
     if request.method == 'POST':
-        blog = request.form['blog']
-        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
         radio = request.form['radio']
-        return render_template('zkouska.html', blog=blog, email=email, radio=radio)
+        flash("login successful")
+        return render_template('zkouska.html', username=username, password=password, radio=radio)
+    flash("login failed")
     return render_template('link.html')
 
 
